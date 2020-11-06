@@ -1,9 +1,15 @@
 const app = require("./app")
 const port = 3000
 const mongoose = require('mongoose');
+const config = require("./config/config");
 
 
-
-app.listen(port, () => {
-  console.log(`mi serve esta escuchando en localhost:${port}`)
+mongoose.connect(config.dbStringConnection,err=>{
+  if (err) {
+    console.log("ERROR: ",err);
+  }else{
+    app.listen(port, () => {
+      console.log(`Server listening on  http://localhost:${port}`)
+    })
+  }
 })
