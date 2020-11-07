@@ -3,10 +3,7 @@ const Schema = mongoose.Schema
 
 const uniqueValidator = require('mongoose-unique-validator');
 const TransactionSchema = Schema({
-    _id: {
-        type: Schema.Types.ObjectId,
-        required: true
-    },
+
     createdAt: {
         type: Date,
         trim : true,

@@ -4,10 +4,7 @@ const Schema = mongoose.Schema
 const uniqueValidator = require('mongoose-unique-validator');
 
 const AdjustmentReasonSchema = new Schema({
-    _id: {
-        type: Schema.Types.ObjectId,
-        required: true
-    },
+
     type: {
         type: String
     },

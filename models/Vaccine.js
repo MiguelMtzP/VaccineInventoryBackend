@@ -3,10 +3,6 @@ const Schema = mongoose.Schema
 const uniqueValidator = require('mongoose-unique-validator');
 
 const  Vaccine = new Schema({
-    _id: {
-        type: Schema.Types.ObjectId,
-        required: true
-    },
     name: {
         type: String
     },
