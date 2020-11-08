@@ -22,5 +22,6 @@ const  Vaccine = new Schema({
         type: Schema.Types.ObjectId
     }
 });
+
 Vaccine.plugin(uniqueValidator, { message: 'must be unique' });
 module.exports = mongoose.model("Vaccine",Vaccine)

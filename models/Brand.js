@@ -8,6 +8,6 @@ const Brand = new Schema({
         trim:true
     }
 });
-Brand.plugin(uniqueValidator, { message: 'must be unique' });
 
+Brand.plugin(uniqueValidator, { message: 'must be unique' });
 module.exports = mongoose.model("Brand",Brand)

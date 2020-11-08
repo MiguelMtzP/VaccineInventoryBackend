@@ -9,24 +9,24 @@ const createUser = async(req,res) => {
     rol,
     uuid,
     password
-  } = req.body
+  } = req.body;
 
-  let newUser = new User()
+  let newUser = new User();
 
-  newUser.firstName = nombre
-  newUser.lastName = apellido
-  newUser.role = rol
-  newUser.UUID = uuid
-  newUser.password = password
+  newUser.firstName = nombre;
+  newUser.lastName = apellido;
+  newUser.role = rol;
+  newUser.UUID = uuid;
+  newUser.password = password;
 
   try {
-    let userSaved = await newUser.save()
-    res.status(201).send({user:userSaved})
+    let userSaved = await newUser.save();
+    res.status(201).send({user:userSaved});
   } catch (error) {
     if(error.errors.UUID && error.errors.UUID.name === "ValidatorError"){
-      res.status(403).send({error:error.message}) 
+      res.status(403).send({error:error.message}); 
     }else{
-      res.status(500).send({error:error.message}) 
+      res.status(500).send({error:error.message}); 
     }
   }
 }
@@ -34,15 +34,26 @@ const createUser = async(req,res) => {
 const getAllUsers = async (req,res) => {
 
   try {
-    let listUsers = await User.find()
-    res.status(200).send({listUsers})
+    let listUsers = await User.find();
+    res.status(200).send({listUsers});
   } catch (error) {
-    res.status(500).send({error:error.message}) 
-    
+    res.status(500).send({error:error.message});
+  }
+}
+
+const getUsersById = async(req, res) => {
+
+  try {
+    let {idUser} = req.params;
+    let UsersById = await User.findById(idUser);
+    res.status(200).send({UsersById});
+  } catch (error) {
+    res.status(500).send({error:error.message}); 
   }
 }
 
 module.exports = {
   createUser,
-  getAllUsers
+  getAllUsers,
+  getUsersById
 }
