@@ -10,13 +10,15 @@ const VaccineInventory = new Schema({
         type: Date
     },
     LOT: {
-        type: String
+        type: String,
     },
     createdAt: {
-        type: Date
+        type: Date,
+        default:Date.now
     },
     locationId: {
-        type: Schema.Types.ObjectId
+        type: Schema.Types.ObjectId,
+        def:"Location"
     },
     items: {
         type: Number

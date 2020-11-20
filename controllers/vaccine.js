@@ -32,7 +32,9 @@ const createVaccine = async(req,res) => {
 
 const getAllVaccines = async(req,res) => {
   try {
-    let vaccineList = await Vaccine.find();
+    let vaccineList = await Vaccine.find()
+                      .populate("idBrand")
+                      .populate("idFunding")
     res.status(200).send({vaccineList}); 
   } catch (error) {
     res.status(500).send({error:error.message});
@@ -49,8 +51,20 @@ const getVaccinesById = async(req,res) => {
   }
 }
 
+const deleteVaccineById = async (req,res)=>{
+  try {
+    let {idVaccine} = req.params
+
+    let deleted =await Vaccine.findByIdAndRemove(idVaccine)
+    res.status(204).send();
+  } catch (error) {
+    res.status(500).send({error:error.message});
+  }
+}
+
 module.exports = {
   createVaccine,
   getAllVaccines,
-  getVaccinesById
+  getVaccinesById,
+  deleteVaccineById
 }

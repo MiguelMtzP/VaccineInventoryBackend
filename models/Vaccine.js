@@ -13,13 +13,15 @@ const  Vaccine = new Schema({
         type: String
     },
     idBrand: {
-        type: Schema.Types.ObjectId
+        type: Schema.Types.ObjectId,
+        ref:"Brand"
     },
     NDC: {
         type: Number
     },
     idFunding: {
-        type: Schema.Types.ObjectId
+        type: Schema.Types.ObjectId,
+        ref:"FundingSource"
     }
 });
 

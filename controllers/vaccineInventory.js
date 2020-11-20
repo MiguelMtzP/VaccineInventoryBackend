@@ -35,7 +35,7 @@ const createVaccineInventory = async(req,res) => {
 const getAllVaccinesInventory = async(req,res) => {
   try {
     let vaccineInventoryList = await VaccineInventory.find();
-    send.status(200).send({vaccineInventoryList}); 
+    res.status(200).send({vaccineInventoryList}); 
   } catch (error) {
     res.status(500).send({error:error.message});
   }
