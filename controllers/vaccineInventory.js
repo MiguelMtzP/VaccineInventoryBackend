@@ -8,7 +8,6 @@ const createVaccineInventory = async(req,res) => {
     idVacuna,
     expiracion,
     lote,
-    creacion,
     idLocacion,
     cantidad,
     estado
@@ -19,7 +18,6 @@ const createVaccineInventory = async(req,res) => {
   newVaccineInventory.idVaccine = idVacuna;
   newVaccineInventory.ExpirationDate = expiracion;
   newVaccineInventory.LOT = lote;
-  newVaccineInventory.createdAt = creacion;
   newVaccineInventory.locationId = idLocacion;
   newVaccineInventory.items = cantidad;
   newVaccineInventory.status = estado;
