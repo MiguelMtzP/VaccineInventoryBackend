@@ -5,12 +5,12 @@ const FundingSource = require("../models/FundingSource");
 const createFundingSource = async(req,res) => {
 
   const {
-    nombre
+    name
   } = req.body
 
   let newFundingSource = new FundingSource();
 
-  newFundingSource.Name = nombre;
+  newFundingSource.name = name;
 
   try {
     let fundingSourceSaved = await newFundingSource.save();

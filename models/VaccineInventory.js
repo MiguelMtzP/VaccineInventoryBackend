@@ -4,7 +4,8 @@ const uniqueValidator = require('mongoose-unique-validator');
 
 const VaccineInventory = new Schema({
     idVaccine: {
-        type: Schema.Types.ObjectId
+        type: Schema.Types.ObjectId,
+        ref:"Vaccine"
     },
     ExpirationDate: {
         type: Date
@@ -18,7 +19,7 @@ const VaccineInventory = new Schema({
     },
     locationId: {
         type: Schema.Types.ObjectId,
-        def:"Location"
+        ref:"Location"
     },
     items: {
         type: Number

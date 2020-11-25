@@ -5,7 +5,7 @@ const Vaccine = require("../models/Vaccine");
 const createVaccine = async(req,res) => {
 
   const {
-    nombre,
+    name,
     cvxCode,
     mvxCode,
     idBrand,
@@ -15,7 +15,7 @@ const createVaccine = async(req,res) => {
 
   let newVaccine = new Vaccine();
 
-  newVaccine.name = nombre;
+  newVaccine.name = name;
   newVaccine.CVXCode = cvxCode;
   newVaccine.MVXCode = mvxCode;
   newVaccine.idBrand = idBrand;

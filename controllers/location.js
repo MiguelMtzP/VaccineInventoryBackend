@@ -5,14 +5,14 @@ const Location = require("../models/Location");
 const createLocations = async(req,res) => {
    
   const {
-    nombre,
-    direccion
+    name,
+    address
   } = req.body;
 
   let newLocation = new Location();
 
-  newLocation.name = nombre;
-  newLocation.address = direccion;
+  newLocation.name = name;
+  newLocation.address = address;
   
   try {
     let locationSaved = await newLocation.save();

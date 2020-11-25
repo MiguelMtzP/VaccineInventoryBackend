@@ -10,19 +10,23 @@ const TransactionSchema = Schema({
         default: Date.now
     },
     idAdjustmentReason: {
-        type: Schema.Types.ObjectId
+        type: Schema.Types.ObjectId,
+        ref:"AdjustmentReason"
     },
     adjustmentNote: {
         type: String
     },
     idUser: {
-        type: Schema.Types.ObjectId
+        type: Schema.Types.ObjectId,
+        ref:"User"
     },
     idVaccineInventory: {
-        type: Schema.Types.ObjectId
+        type: Schema.Types.ObjectId,
+        ref:"VaccineInventory"
     },
     idPatient: {
-        type: Schema.Types.ObjectId
+        type: Schema.Types.ObjectId,
+        ref:"Patient"
     },
     incAmount: {
         type: Number

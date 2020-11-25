@@ -5,12 +5,12 @@ const Brand = require("../models/Brand");
 const createBrand = async(req,res) => {
 
   const {
-    nombre
+    name
   } = req.body
 
   let newBrand = new Brand();
 
-  newBrand.name = nombre;
+  newBrand.name = name;
 
   try {
     let brandSaved = await newBrand.save();
